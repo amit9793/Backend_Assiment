@@ -1,0 +1,830 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\91788\Desktop\Backend> mongo
+MongoDB shell version v5.0.3
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabl
+Implicit session: session { "id" : UUID("e37de1ca-67eb-4aa0-
+MongoDB server version: 5.0.3
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mon
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2021-11-22T11:24:15.260+05:30: Access control is not
+---
+---
+        Enable MongoDB's free cloud-based monitoring service
+        metrics about your deployment (disk utilization, CPU
+
+        The monitoring data will be available on a MongoDB w
+        and anyone you share the URL with. MongoDB may use t
+        improvements and to suggest MongoDB products and dep
+
+        To enable free monitoring, run the following command
+        To permanently disable this reminder, run the follow
+---
+> show dbs
+admin       0.000GB
+assignment  0.000GB
+config      0.000GB
+test        0.000GB
+> use assignment
+switched to db assignment
+> show collections
+users
+> db.Database
+assignment.Database
+> db.users.insertMany([{first_name : "Amit"},{last_name : "Y
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619baa84e528d31801ec576a"),
+                ObjectId("619baa84e528d31801ec576b")
+        ]
+}
+> db.users.insertOne({first_name : "aman"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619baae6e528d31801ec576c")
+}
+> db.users.insertOne({first_name : "vikash",last_name : "Yad
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bac12e528d31801ec576d")
+}
+2")
+        ]
+}
+> db.user.insertOne({first_name : "jannat"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bad30e528d31801ec5773")
+}
+> db.users.insertMany([{first_name : "pappu"},{last_name : "gupta"}, {email : "amityadav@gmail"}, {gender : "Male"},{age : 24}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619badd4e528d31801ec5774"),
+                ObjectId("619badd4e528d31801ec5775"),
+                ObjectId("619badd4e528d31801ec5776"),
+                ObjectId("619badd4e528d31801ec5777"),
+                ObjectId("619badd4e528d31801ec5778")
+        ]
+}
+> db.user.drop()
+trdb.users.insertMany([{first_name : "anita"},{last_name : "Yadav"},{emaia}])
+              ame : "Yadav"},{ema}])uncaught exception: ReferenceError: emaia is not defined :
+@(shell):1:68
+> db.users.insertMany([{first_name : "anita"},{last_name : "Yadav"},{email : "asasasasa@gamil.com"},{age : 34}])  
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619baf0be528d31801ec5779"),
+                ObjectId("619baf0be528d31801ec577a"),
+                ObjectId("619baf0be528d31801ec577b"),
+                ObjectId("619baf0be528d31801ec577c")
+        ]
+}
+> db.users.find().pretty();
+{
+        "_id" : ObjectId("619ba61a0cc9df26a1a8252f"),
+        "first_name" : "Amit",
+        "last_name" : "Yadav",
+PS C:\Users\91788\Desktop\Backend> mongo
+MongoDB shell version v5.0.3
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("a8cafae4-ff5e-4f9d-a1d1-97b10dda09fd") }
+MongoDB server version: 5.0.3
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in  
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2021-11-22T11:24:15.260+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> db.user.find({first_name : "amit"})
+> db.user.find({first_name : "Amit"})
+> db.users.find({first_name : "Amit"})
+> db.users.find({age : 23})
+> db.users
+test.users
+> db.user.find()
+> db.users.find()
+{ "_id" : ObjectId("619ba6ff95e6bd5cdb2e533d"), "first_name" : "Amrita" }
+{ "_id" : ObjectId("619ba78195e6bd5cdb2e533e"), "first_name" : "amit" }
+{ "_id" : ObjectId("619ba81e95e6bd5cdb2e533f"), "first_name" : "amityadav", "last_name" : "yadav" }
+> db.users.find()
+{ "_id" : ObjectId("619ba6ff95e6bd5cdb2e533d"), "first_name" : "Amrita" }
+{ "_id" : ObjectId("619ba78195e6bd5cdb2e533e"), "first_name" : "amit" }
+{ "_id" : ObjectId("619ba81e95e6bd5cdb2e533f"), "first_name" : "amityadav", "last_name" : "yadav" }
+> db.user.find()
+> db.user.find()
+> db.users.find()
+{ "_id" : ObjectId("619ba6ff95e6bd5cdb2e533d"), "first_name" : "Amrita" }
+{ "_id" : ObjectId("619ba78195e6bd5cdb2e533e"), "first_name" : "amit" }
+{ "_id" : ObjectId("619ba81e95e6bd5cdb2e533f"), "first_name" : "amityadav", "last_name" : "yadav" }
+> db
+test
+> use assignment
+switched to db assignment
+> show collections
+users
+> db.users.find()
+{ "_id" : ObjectId("619ba61a0cc9df26a1a8252f"), "first_name" : "Amit", "last_name" : "Yadav", "email" : "amityda" 
+}
+{ "_id" : ObjectId("619bac12e528d31801ec576d"), "first_name" : "vikash", "last_name" : "Yadav", "email" : "amityadav.ay104@gamil.com", "gender" : "Male", "age" : "23" }
+{ "_id" : ObjectId("619badd4e528d31801ec5774"), "first_name" : "pappu" }
+{ "_id" : ObjectId("619badd4e528d31801ec5775"), "last_name" : "gupta" }
+{ "_id" : ObjectId("619badd4e528d31801ec5776"), "email" : "amityadav@gmail" }
+{ "_id" : ObjectId("619badd4e528d31801ec5777"), "gender" : "Male" }
+{ "_id" : ObjectId("619badd4e528d31801ec5778"), "age" : 24 }
+{ "_id" : ObjectId("619baf0be528d31801ec5779"), "first_name" : "anita" }
+{ "_id" : ObjectId("619baf0be528d31801ec577a"), "last_name" : "Yadav" }
+{ "_id" : ObjectId("619baf0be528d31801ec577b"), "email" : "asasasasa@gamil.com" }
+{ "_id" : ObjectId("619baf0be528d31801ec577c"), "age" : 34 }
+> db.users.find({first_name : "Amit"})
+{ "_id" : ObjectId("619ba61a0cc9df26a1a8252f"), "first_name" : "Amit", "last_name" : "Yadav", "email" : "amityda" 
+}
+> db.users.find({age : 34}).pretty();
+{ "_id" : ObjectId("619baf0be528d31801ec577c"), "age" : 34 }
+> db.user.find({first_name})
+uncaught exception: ReferenceError: first_name is not defined :
+@(shell):1:15
+> db.users.find({first_name :})
+uncaught exception: SyntaxError: expected expression, got '}' :
+@(shell):1:27
+> db.users.updates({_id :619ba61a0cc9df26a1a8252f},{$ set : {first_name : "john"}})
+uncaught exception: SyntaxError: identifier starts immediately after numeric literal :
+@(shell):1:23
+> db
+assignment
+> db
+assignment
+> db.users.findOne({gender : "Male"})
+{
+        "_id" : ObjectId("619bac12e528d31801ec576d"),
+        "first_name" : "vikash",
+        "last_name" : "Yadav",
+        "email" : "amityadav.ay104@gamil.com",
+        "gender" : "Male",
+        "age" : "23"
+}
+> db.users.find({gender : "Male"})   
+{ "_id" : ObjectId("619bac12e528d31801ec576d"), "first_name" : "vikash", "last_name" : "Yadav", "email" : "amityadav.ay104@gamil.com", "gender" : "Male", "age" : "23" }
+{ "_id" : ObjectId("619badd4e528d31801ec5777"), "gender" : "Male" }
+> db.users.find({gender : "Male"}).pretty();
+{
+        "_id" : ObjectId("619bac12e528d31801ec576d"),
+        "first_name" : "vikash",
+        "last_name" : "Yadav",
+        "email" : "amityadav.ay104@gamil.com",
+        "gender" : "Male",
+        "age" : "23"
+}
+{ "_id" : ObjectId("619badd4e528d31801ec5777"), "gender" : "Male" }
+> db.users.updates({first_name : "Amit"},{ $ set : {first_name : "manoj"}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:43
+> db.users.updates({first_name : "Amit"},{ $ Set : {first_name : "manoj"}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:43
+> db.users.updates({first_name : "Amit"},{ $set : {first_name : "manoj"}}) 
+uncaught exception: TypeError: db.users.updates is not a function :
+@(shell):1:1
+> db.users.updates({first_name : "Amit"},{ $ set : {first_name : "manoj"}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:43
+> db.users.updates({gender : "Male"}, { $ set : { gender : "female"}})     
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:40
+> db.users.updatesMany({gender : "Male"}, { $ set : { gender : "female"}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:44
+> db.users.insertMany([{first_name : "anita"},{last_name : "Yadav"},{email : "asasasasa@gamil.com"},{age : 34}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619bb8c9b002e2eb8caf4b13"),
+                ObjectId("619bb8c9b002e2eb8caf4b14"),
+                ObjectId("619bb8c9b002e2eb8caf4b15"),
+                ObjectId("619bb8c9b002e2eb8caf4b16")
+        ]
+}
+> db.users.insertMany([{first_name : "sumit"},{last_name : "Yadav"},{email : "asasasasa@gamil.com"},{age : 3}]) 
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619bb8e4b002e2eb8caf4b17"),
+                ObjectId("619bb8e4b002e2eb8caf4b18"),
+                ObjectId("619bb8e4b002e2eb8caf4b19"),
+                ObjectId("619bb8e4b002e2eb8caf4b1a")
+        ]
+}
+> db.users.insertMany([{first_name : "sumit"},{last_name : "Yadav"},{email : "asasasasa@gamil.com"},{age : 3}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619bb8eab002e2eb8caf4b1b"),
+                ObjectId("619bb8eab002e2eb8caf4b1c"),
+                ObjectId("619bb8eab002e2eb8caf4b1d"),
+                ObjectId("619bb8eab002e2eb8caf4b1e")
+        ]
+}
+> db.users.insertMany([{first_name : "pattu"},{last_name : "Yadav"},{email : "aasa@gamil.com"},{age : 321}])   
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619bb8feb002e2eb8caf4b1f"),
+                ObjectId("619bb8feb002e2eb8caf4b20"),
+                ObjectId("619bb8feb002e2eb8caf4b21"),
+                ObjectId("619bb8feb002e2eb8caf4b22")
+        ]
+}
+> db.users.insertMany([{first_name : "subash"},{last_name : "Yadav"},{email : "123aasa@gamil.com"},{age : 21}]) 
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619bb910b002e2eb8caf4b23"),
+                ObjectId("619bb910b002e2eb8caf4b24"),
+                ObjectId("619bb910b002e2eb8caf4b25"),
+                ObjectId("619bb910b002e2eb8caf4b26")
+        ]
+}
+> db.users.insertMany([{first_name : "induh"},{last_name : "Yadav"},{email : "induasa@gamil.com"},{age : 22}]) 
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619bb924b002e2eb8caf4b27"),
+                ObjectId("619bb924b002e2eb8caf4b28"),
+                ObjectId("619bb924b002e2eb8caf4b29"),
+                ObjectId("619bb924b002e2eb8caf4b2a")
+        ]
+}
+> db.users.insertMany([{first_name : "mamta"},{last_name : "Yadav"},{email : "mamtaduasa@gamil.com"},{age : 32}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("619bb937b002e2eb8caf4b2b"),
+                ObjectId("619bb937b002e2eb8caf4b2c"),
+                ObjectId("619bb937b002e2eb8caf4b2d"),
+                ObjectId("619bb937b002e2eb8caf4b2e")
+        ]
+}
+> db.users.insertOne({first_name : "anita"},{last_name : "Yadav"},{email : "asasasasa@gamil.com"},{age : 34}])   
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:106
+> db.users.insertOne({first_name : "anita", last_name : "Yadav" , email : "asasasasa@gamil.com" , age : 34 ]) 
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:105
+> db.users.insertOne({first_name : "anita", last_name : "Yadav" , email : "asasasasa@gamil.com" , age : 34} ])
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:106
+> db.users.insertOne({first_name : "anita", last_name : "Yadav" , email : "asasasasa@gamil.com" , age : 34} ) 
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bb990b002e2eb8caf4b2f")
+}
+> db.users.insertOne({first_name : "patty", last_name : "Yadav" , email : "pattusa@gamil.com" , age : 214} )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bb9a7b002e2eb8caf4b30")
+}
+> db.users.insertOne({first_name : "sumit", last_name : "Yadav" , email : "sumita@gamil.com" , age : 14} )  
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bb9bab002e2eb8caf4b31")
+}
+> db.users.insertOne({first_name : "mamta", last_name : "Yadav" , email : "mamtaa@gamil.com" , age : 41} )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bb9ceb002e2eb8caf4b32")
+}
+> db.users.insertOne({first_name : "sanjay", last_name : "Yadav" , email : "sanjay@gamil.com" , age : 21} )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bb9e4b002e2eb8caf4b33")
+}
+> db.users.insertOne({first_name : "sanjay", last_name : "Yadav" , email : "sanjay@gamil.com" , age : 21} )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bba40b002e2eb8caf4b34")
+}
+> db.users.insertOne({first_name : "sanjay", last_name : "Yadav" , email : "sanjay@gamil.com" , age : 21} )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bba55b002e2eb8caf4b35")
+}
+> db.users.insertOne({first_name : "sanjay", last_name : "Yadav" , email : "sanjay@gamil.com" , age : 21} )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bba67b002e2eb8caf4b36")
+}
+> db.users.insertOne({first_name : "patty", last_name : "Yadav" , email : "pattusa@gamil.com" , age : 214} )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bba92b002e2eb8caf4b37")
+}
+> db
+assignment
+> db.users.insertOne({first_name : "patty", last_name : "Yadav" , email : "pattusa@gamil.com" , age : 214} )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bbab4b002e2eb8caf4b38")
+}
+> db.users.insertOne({first_name : "mamta", last_name : "Yadav" , email : "mamtaa@gamil.com" , age : 41} )  
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("619bbab8b002e2eb8caf4b39")
+}
+> db.users.find({first_name : "Amit"})
+{ "_id" : ObjectId("619ba61a0cc9df26a1a8252f"), "first_name" : "Amit", "last_name" : "Yadav", "email" : "amityda" 
+}
+> db.users.find({gender : "Male"}) 
+{ "_id" : ObjectId("619bac12e528d31801ec576d"), "first_name" : "vikash", "last_name" : "Yadav", "email" : "amityadav.ay104@gamil.com", "gender" : "Male", "age" : "23" }
+> db.users.find({gender : "Male"}).pretty()
+{
+        "_id" : ObjectId("619bac12e528d31801ec576d"),
+        "first_name" : "vikash",
+        "last_name" : "Yadav",
+        "email" : "amityadav.ay104@gamil.com",
+        "gender" : "Male",
+        "age" : "23"
+}
+> db.users.find({last_name : "Yadav"}).pretty()
+{
+        "_id" : ObjectId("619ba61a0cc9df26a1a8252f"),
+        "first_name" : "Amit",
+        "last_name" : "Yadav",
+        "email" : "amityda"
+}
+{
+        "_id" : ObjectId("619bac12e528d31801ec576d"),
+        "first_name" : "vikash",
+        "last_name" : "Yadav",
+        "email" : "amityadav.ay104@gamil.com",
+        "gender" : "Male",
+        "age" : "23"
+}
+{
+        "_id" : ObjectId("619bb990b002e2eb8caf4b2f"),
+        "first_name" : "anita",
+        "last_name" : "Yadav",
+        "email" : "asasasasa@gamil.com",
+        "age" : 34
+}
+{
+        "_id" : ObjectId("619bb9a7b002e2eb8caf4b30"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bb9bab002e2eb8caf4b31"),
+        "first_name" : "sumit",
+        "last_name" : "Yadav",
+        "email" : "sumita@gamil.com",
+        "age" : 14
+}
+{
+        "_id" : ObjectId("619bb9ceb002e2eb8caf4b32"),
+        "first_name" : "mamta",
+        "last_name" : "Yadav",
+        "email" : "mamtaa@gamil.com",
+        "age" : 41
+}
+{
+        "_id" : ObjectId("619bb9e4b002e2eb8caf4b33"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba40b002e2eb8caf4b34"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba55b002e2eb8caf4b35"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba67b002e2eb8caf4b36"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba92b002e2eb8caf4b37"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab4b002e2eb8caf4b38"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab8b002e2eb8caf4b39"),
+        "first_name" : "mamta",
+        "last_name" : "Yadav",
+        "email" : "mamtaa@gamil.com",
+        "age" : 41
+}
+> db.users.findOne({last_name : "Yadav"}).pretty()
+uncaught exception: TypeError: db.users.findOne(...).pretty is not a function :
+@(shell):1:1
+> db.users.findOne({last_name : "Yadav"}).pretty()
+uncaught exception: TypeError: db.users.findOne(...).pretty is not a function :
+@(shell):1:1
+> db.users.find({last_name : "Yadav"}).pretty()   
+{
+        "_id" : ObjectId("619ba61a0cc9df26a1a8252f"),
+        "first_name" : "Amit",
+        "last_name" : "Yadav",
+        "email" : "amityda"
+}
+{
+        "_id" : ObjectId("619bac12e528d31801ec576d"),
+        "first_name" : "vikash",
+        "last_name" : "Yadav",
+        "email" : "amityadav.ay104@gamil.com",
+        "gender" : "Male",
+        "age" : "23"
+}
+{
+        "_id" : ObjectId("619bb990b002e2eb8caf4b2f"),
+        "first_name" : "anita",
+        "last_name" : "Yadav",
+        "email" : "asasasasa@gamil.com",
+        "age" : 34
+}
+{
+        "_id" : ObjectId("619bb9a7b002e2eb8caf4b30"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bb9bab002e2eb8caf4b31"),
+        "first_name" : "sumit",
+        "last_name" : "Yadav",
+        "email" : "sumita@gamil.com",
+        "age" : 14
+}
+{
+        "_id" : ObjectId("619bb9ceb002e2eb8caf4b32"),
+        "first_name" : "mamta",
+        "last_name" : "Yadav",
+        "email" : "mamtaa@gamil.com",
+        "age" : 41
+}
+{
+        "_id" : ObjectId("619bb9e4b002e2eb8caf4b33"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba40b002e2eb8caf4b34"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba55b002e2eb8caf4b35"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba67b002e2eb8caf4b36"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba92b002e2eb8caf4b37"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab4b002e2eb8caf4b38"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab8b002e2eb8caf4b39"),
+        "first_name" : "mamta",
+        "last_name" : "Yadav",
+        "email" : "mamtaa@gamil.com",
+        "age" : 41
+}
+> db.users.find({name : "Amit"})
+> db.users.find({ name : "Amit" })
+> db
+assignment
+> db.users.find({ first_name : "Amit" })
+{ "_id" : ObjectId("619ba61a0cc9df26a1a8252f"), "first_name" : "Amit", "last_name" : "Yadav", "email" : "amityda" 
+}
+> db.users.find({ first_name : "Amit" }).pretty()
+{
+        "_id" : ObjectId("619ba61a0cc9df26a1a8252f"),
+        "first_name" : "Amit",
+        "last_name" : "Yadav",
+        "email" : "amityda"
+}
+> db.users.find({ first_name : { $eq : "patty"}).pretty()
+...
+...
+>
+>
+>
+> db.users.find({ first_name : {$eq : "Amit" } }).pretty()
+{
+        "_id" : ObjectId("619ba61a0cc9df26a1a8252f"),
+        "first_name" : "Amit",
+        "last_name" : "Yadav",
+        "email" : "amityda"
+}
+> db.users.find({ first_name : {$eq : "patty" } }).pretty()
+{
+        "_id" : ObjectId("619bb9a7b002e2eb8caf4b30"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bba92b002e2eb8caf4b37"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab4b002e2eb8caf4b38"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+> db.users.find({ first_name : $eq : "patty"})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:33
+> db.users.find({ first_name : {$eq : "patty"}})
+{ "_id" : ObjectId("619bb9a7b002e2eb8caf4b30"), "first_name" : "patty", "last_name" : "Yadav", "email" : "pattusa@gamil.com", "age" : 214 }
+{ "_id" : ObjectId("619bba92b002e2eb8caf4b37"), "first_name" : "patty", "last_name" : "Yadav", "email" : "pattusa@gamil.com", "age" : 214 }
+{ "_id" : ObjectId("619bbab4b002e2eb8caf4b38"), "first_name" : "patty", "last_name" : "Yadav", "email" : "pattusa@gamil.com", "age" : 214 }
+> db.users.find({first_name : { $ne : "anita"}})
+{ "_id" : ObjectId("619ba61a0cc9df26a1a8252f"), "first_name" : "Amit", "last_name" : "Yadav", "email" : "amityda" 
+}
+{ "_id" : ObjectId("619bac12e528d31801ec576d"), "first_name" : "vikash", "last_name" : "Yadav", "email" : "amityadav.ay104@gamil.com", "gender" : "Male", "age" : "23" }
+{ "_id" : ObjectId("619bb9a7b002e2eb8caf4b30"), "first_name" : "patty", "last_name" : "Yadav", "email" : "pattusa@gamil.com", "age" : 214 }
+{ "_id" : ObjectId("619bb9bab002e2eb8caf4b31"), "first_name" : "sumit", "last_name" : "Yadav", "email" : "sumita@gamil.com", "age" : 14 }
+{ "_id" : ObjectId("619bb9ceb002e2eb8caf4b32"), "first_name" : "mamta", "last_name" : "Yadav", "email" : "mamtaa@gamil.com", "age" : 41 }
+{ "_id" : ObjectId("619bb9e4b002e2eb8caf4b33"), "first_name" : "sanjay", "last_name" : "Yadav", "email" : "sanjay@gamil.com", "age" : 21 }
+{ "_id" : ObjectId("619bba40b002e2eb8caf4b34"), "first_name" : "sanjay", "last_name" : "Yadav", "email" : "sanjay@gamil.com", "age" : 21 }
+{ "_id" : ObjectId("619bba55b002e2eb8caf4b35"), "first_name" : "sanjay", "last_name" : "Yadav", "email" : "sanjay@gamil.com", "age" : 21 }
+{ "_id" : ObjectId("619bba67b002e2eb8caf4b36"), "first_name" : "sanjay", "last_name" : "Yadav", "email" : "sanjay@gamil.com", "age" : 21 }
+{ "_id" : ObjectId("619bba92b002e2eb8caf4b37"), "first_name" : "patty", "last_name" : "Yadav", "email" : "pattusa@gamil.com", "age" : 214 }
+{ "_id" : ObjectId("619bbab4b002e2eb8caf4b38"), "first_name" : "patty", "last_name" : "Yadav", "email" : "pattusa@gamil.com", "age" : 214 }
+{ "_id" : ObjectId("619bbab8b002e2eb8caf4b39"), "first_name" : "mamta", "last_name" : "Yadav", "email" : "mamtaa@gamil.com", "age" : 41 }
+> db.users.find({first_name : { $ne : "anita"}}).pretty()
+{
+        "_id" : ObjectId("619ba61a0cc9df26a1a8252f"),
+        "first_name" : "Amit",
+        "last_name" : "Yadav",
+        "email" : "amityda"
+}
+{
+        "_id" : ObjectId("619bac12e528d31801ec576d"),
+        "first_name" : "vikash",
+        "last_name" : "Yadav",
+        "email" : "amityadav.ay104@gamil.com",
+        "gender" : "Male",
+        "age" : "23"
+}
+{
+        "_id" : ObjectId("619bb9a7b002e2eb8caf4b30"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bb9bab002e2eb8caf4b31"),
+        "first_name" : "sumit",
+        "last_name" : "Yadav",
+        "email" : "sumita@gamil.com",
+        "age" : 14
+}
+{
+        "_id" : ObjectId("619bb9ceb002e2eb8caf4b32"),
+        "first_name" : "mamta",
+        "last_name" : "Yadav",
+        "email" : "mamtaa@gamil.com",
+        "age" : 41
+}
+{
+        "_id" : ObjectId("619bb9e4b002e2eb8caf4b33"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba40b002e2eb8caf4b34"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba55b002e2eb8caf4b35"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba67b002e2eb8caf4b36"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba92b002e2eb8caf4b37"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab4b002e2eb8caf4b38"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab8b002e2eb8caf4b39"),
+        "first_name" : "mamta",
+        "last_name" : "Yadav",
+        "email" : "mamtaa@gamil.com",
+        "age" : 41
+}
+> db.users.find({age : { $gte : 100}}) 
+{ "_id" : ObjectId("619bb9a7b002e2eb8caf4b30"), "first_name" : "patty", "last_name" : "Yadav", "email" : "pattusa@gamil.com", "age" : 214 }
+{ "_id" : ObjectId("619bba92b002e2eb8caf4b37"), "first_name" : "patty", "last_name" : "Yadav", "email" : "pattusa@gamil.com", "age" : 214 }
+{ "_id" : ObjectId("619bbab4b002e2eb8caf4b38"), "first_name" : "patty", "last_name" : "Yadav", "email" : "pattusa@gamil.com", "age" : 214 }
+>
+> db.users.find({age : { $gte : 100}}).preety()
+uncaught exception: TypeError: db.users.find(...).preety is not a function :
+@(shell):1:1
+> db.users.find({age : { $gte : 100}}).pretty()
+{
+        "_id" : ObjectId("619bb9a7b002e2eb8caf4b30"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bba92b002e2eb8caf4b37"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab4b002e2eb8caf4b38"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+> db.users.find({age : { $lte : 214}}).pretty()
+{
+        "_id" : ObjectId("619bb990b002e2eb8caf4b2f"),
+        "first_name" : "anita",
+        "last_name" : "Yadav",
+        "email" : "asasasasa@gamil.com",
+        "age" : 34
+}
+{
+        "_id" : ObjectId("619bb9a7b002e2eb8caf4b30"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bb9bab002e2eb8caf4b31"),
+        "first_name" : "sumit",
+        "last_name" : "Yadav",
+        "email" : "sumita@gamil.com",
+        "age" : 14
+}
+{
+        "_id" : ObjectId("619bb9ceb002e2eb8caf4b32"),
+        "first_name" : "mamta",
+        "last_name" : "Yadav",
+        "email" : "mamtaa@gamil.com",
+        "age" : 41
+}
+{
+        "_id" : ObjectId("619bb9e4b002e2eb8caf4b33"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba40b002e2eb8caf4b34"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba55b002e2eb8caf4b35"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba67b002e2eb8caf4b36"),
+        "first_name" : "sanjay",
+        "last_name" : "Yadav",
+        "email" : "sanjay@gamil.com",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("619bba92b002e2eb8caf4b37"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab4b002e2eb8caf4b38"),
+        "first_name" : "patty",
+        "last_name" : "Yadav",
+        "email" : "pattusa@gamil.com",
+        "age" : 214
+}
+{
+        "_id" : ObjectId("619bbab8b002e2eb8caf4b39"),
+        "first_name" : "mamta",
+        "last_name" : "Yadav",
+        "email" : "mamtaa@gamil.com",
+        "age" : 41
+}
+> db.users.find({age : { $gte : 100}}).pretty()     
